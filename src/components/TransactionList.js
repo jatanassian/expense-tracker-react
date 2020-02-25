@@ -2,17 +2,17 @@ import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 
 export const TransactionList = () => {
-  const context = useContext(GlobalContext);
-
-  console.log(context);
+  const { transactions } = useContext(GlobalContext);
 
   return (
     <>
       <h3>History</h3>
-      <ul xclass="list">
-        <li className="minus">
-          Cash <span>-$400</span><button className="delete-btn">x</button>
+      <ul className="list">
+        {transactions.map(t => (
+          <li className="minus">
+          {t.text} <span>{t.amount}</span><button className="delete-btn">x</button>
         </li>
+        ))}
       </ul>
     </>
   )
