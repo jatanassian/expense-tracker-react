@@ -9,7 +9,7 @@ router
   .post(addTransaction);
 
 router
-  .delete('/:id')
-  .delete(deleteTransactions);
-  
+  .route('/:id')
+  .delete(deleteTransaction);
+
 module.exports = router;
