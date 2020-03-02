@@ -15,6 +15,9 @@ const transactions = require('./routes/transactions');
 // Initialize the express app
 const app = express();
 
+// Allows to use the bodyparser to use req.body.something (in the controller for this app)
+app.use(express.json())
+
 // Connect to the transactions route
 app.use('/api/v1/transactions', transactions);
 
