@@ -15,7 +15,7 @@ exports.getTransactions = async (req, res, next) => {
       data: transactions
     });
   } catch (err) {
-    return res.send(500).json({
+    return res.status(500).json({
       success: false,
       error: 'Server Error'
     });
@@ -31,7 +31,7 @@ exports.addTransaction = async (req, res, next) => {
 
     const transaction  = await Transaction.create(req.body); // After we get the data we create a transaction using the create method from mongoose. Make sure that the data matches the one from the model, otherwise the model won't accept it
 
-    return res.send(201).json({
+    return res.status(201).json({
       success: true,
       data: transaction
   });
