@@ -26,7 +26,18 @@ exports.getTransactions = async (req, res, next) => {
 // @route POST /api/v1/transactions
 // @access Public
 exports.addTransaction = async (req, res, next) => {
-  res.send('POST transactions');
+  try {
+    const { text, amount } = req.body;
+
+    const transaction  = await Transaction.create(req.body); // After we get the data we create a transaction using the create method from mongoose. Make sure that the data matches the one from the model, otherwise the model won't accept it
+
+    return res.send(201).json({
+      success: true,
+      data: transaction
+  });
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // @desc Delete all transactions
