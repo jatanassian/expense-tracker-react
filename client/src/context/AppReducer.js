@@ -2,6 +2,12 @@
 
 export default (state, action) => {
   switch(action.type) {
+    case 'GET_TRANSACTIONS':
+      return {
+        ...state,
+        loading: false,
+        transactions: action.payload
+      }
     case 'DELETE_TRANSACTION':
       return {
         ...state,
@@ -12,6 +18,11 @@ export default (state, action) => {
         ...state,
         transactions: [action.payload, ...state.transactions]
       }
+      case 'TRANSACTION_ERROR':
+        return {
+          ...state,
+          error: action.payload
+        }
     default:
       return state;
   }
