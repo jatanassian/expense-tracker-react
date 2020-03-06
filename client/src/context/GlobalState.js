@@ -20,6 +20,7 @@ export const GlobalProvider = ({ children }) => {
   // Actions that are gonna make calls to our reducer
   async function getTransactions() {
     try {
+      // Fetches the transactions from the back-end, dispatch get_transactions in the reducer and send the data. The reducer then changes the state and adds the transactions from the response to the global state
       const res = await axios.get('/api/v1/transactions');
 
       dispatch({
