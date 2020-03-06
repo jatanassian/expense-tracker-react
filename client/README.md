@@ -1,5 +1,7 @@
 # Expense Tracker
-This project is an expense tracker, made following [Brad Traversy's tutorial](https://www.youtube.com/watch?v=XuFDcZABiDQ), using [React](https://reactjs.org/) and [Create React App](https://github.com/facebook/create-react-app), hooks and the [Context API](https://reactjs.org/docs/context.html).
+This project is an expense tracker, made following Brad Traversy's tutorial [Part 1](https://www.youtube.com/watch?v=XuFDcZABiDQ) and [Part 2](https://www.youtube.com/watch?v=KyWaXA_NvT0).
+Made using [React](https://reactjs.org/) and [Create React App](https://github.com/facebook/create-react-app), hooks and the [Context API](https://reactjs.org/docs/context.html) for the front-end.
+Made using Node.js and MongoDB for the back-end.
 
 ## Screenshots
 View of the app
