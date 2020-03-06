@@ -18,6 +18,10 @@ const app = express();
 // Allows to use the bodyparser to use req.body.something (in the controller for this app)
 app.use(express.json())
 
+if(process.env.NODE_ENV === 'development') {
+  app.use(morgan('dev'));
+}
+
 // Connect to the transactions route
 app.use('/api/v1/transactions', transactions);
 
